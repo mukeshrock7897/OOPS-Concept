@@ -1,0 +1,1577 @@
+===================================================================================
+===================================================================================
+	
+				Class
+			========================
+			========================
+class is collection of variables and menthods ............
+where variables hold data and methods performs operations it may be any kind operations......
+class is defined by class  keyword 
+this is blueprint of objects
+
+
+				Syntax of Class
+			=============================
+			=============================
+
+class ClassName:
+	-----------------------------  Statement 1
+	----------------------------   Statement 2	
+	----------------------------   Statement 3
+	----------------------------   Statement 4
+
+
+Ex-----------
+========
+========
+
+class Company:
+
+	"This Company Name is Infosys , This is Located in Banglore"
+	
+	def  Details(self):
+
+		print("This is IT Comppany")
+
+
+-------------------------------
+------------------------------
+>>>c=Company( )		
+
+>>>c.Details( )		#This is IT Company
+
+>>>c.__doc__		#This Company Name is Infosys ,This is Located in Banglore
+
+
+
+===================================================================================
+===================================================================================
+
+===================================================================================
+===================================================================================
+
+				Object
+			========================
+			========================
+
+a physical existence of class 
+
+we can any number of objects for a class 
+
+
+				Snytax of Objects
+			==============================
+
+OjectReferenceVariable=ClassName( )
+
+ReferenceVariable----
+
+		The Varaible which can be used to refer object is Called reference variable
+
+
+Note----
+
+	To call variables and functions from a class we use object or ObjectReference variable 
+
+
+Ex-
+
+class Bank:
+
+	def Name(self):
+		print("Bank Name is Bank of Baroda")
+
+	
+
+>>>b1=Bank( )
+>>>Bank().Name() 	# Bank Name is Bank of Baroda
+>>>b1.name( )	# Bank Name is Bank of Baroda
+
+
+
+Calling variables and Methods from class--
+====================================
+====================================
+
+1----With Objects
+===============
+===============
+
+
+>>>Bank( ).display( )	#Bank Name is Bank of Baroda
+
+Note-----
+
+	By using object we can call only one variable or one function for one time only
+(Not Second time)	
+
+
+2-----With Object Reference Variable
+=================================
+=================================
+
+>>>b1.display( )		#Bank Name is Bank of Baroda
+
+
+Note -----
+
+	By using object reference variable we can call multiple variables and multiple functions
+for any Number of Times
+
+===================================================================================
+===================================================================================
+
+
+
+self variable------
+==============
+==============
+
+	self is the default variable which is always pointing to current objects
+	by using self we can access instance variable and instance method of object
+
+
+Ex---------
+
+	def __init__(self ):			#inside a constructor 
+
+	def  name (self):			# inside a instance method
+
+==================================================================================
+==================================================================================
+
+
+				Constructor
+
+			=============================
+			=============================
+
+
+constructor is special method in python
+constructor is used to initialize instance variable of a class
+constructor name should be __init__(self )
+constructor is automatically called at time of object creation
+per object constructor will be executed only once
+constructor will take self as default parameter
+constructor can be Parameterized and Nonparameterized
+
+Ex
+=====
+=====
+	class Bank:
+		def __init__(self):
+			print("This is Constructor")
+
+>>>b=Bank()		# This is Constructor
+
+
+1--Parameterized Constructor
+=========================
+=========================
+this constructor takes parameter during object creation
+
+>>>class Employee:
+
+	def __init__(self,name,company,city):
+			self.name=name
+			self.company=company
+			self.city=city
+	def  display(self):
+		print(self.name)
+		print(self.company)
+		print(self.city)
+
+>>>e1=Employee( )		#Error requird 3 arguments
+
+>>>e2=Employee("Mukesh","Infosys","Banglore")		
+>>>e2.display( )				#Mukesh  Infosys  Banglore
+
+
+>>>e3=Employee("Amresh","Alhabib","Saudi")		
+>>>e3.display( )				#Amresh  Alhabib  Saudi
+
+
+
+2---NonParameterized
+===================
+===================
+
+This takes no parameter during objecet creation
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+>>> class Employee:
+	def __init__(self,name="Mukesh",age="20"):
+		self.name=name
+		self.age=age
+	def  display(self):
+		print(self.name)
+		print(self.age)
+
+		
+>>> e1=Employee( )
+>>> e1.display( )		# Mukesh  20
+
+
+>>> e2=Employee( )
+>>> e2.display( )		# Mukesh  20
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+>>> class Employee:
+	def __init__(self):
+		self.name="Mukesh"
+		self.age="20"
+	def  display(self):
+		print(self.name)
+		print(self.age)
+
+		
+>>> e1=Employee( )
+>>> e1.display( )	#Mukesh  20
+
+
+>>> e2=Employee( )
+>>> e2.display( )	#Mukesh  20
+
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+
+		NonParameterized and Parameterized Both Defining
+	================================================================
+	================================================================
+
+
+>>> class Employee:
+	def __init__(self,name="Mukesh",age="20"):
+		self.name=name
+		self.age=age
+	def  display(self):
+		print(self.name)
+		print(self.age)
+
+		
+>>> e1=Employee( )
+>>> e1.display( )	#Mukesh 20
+
+
+>>> e2=Employee("Amresh","30")
+>>> e2.display()	#Amresh 30
+
+
+>>> e3=Employee("40")
+>>> e3.display( ) 		# 40 20
+
+
+
+>>> e4=Employee(age="40")
+>>> e4.display( ) 		# Mukesh 40
+
+>>> e5=Employee(name="Indresh")
+>>> e5.display()			# Indresh  20
+
+
+
+
+===================================================================================
+===================================================================================
+
+		Differnce B/W Methods(function) and Constructor
+		===========================================
+		===========================================
+
+
+	Constructor				Method(function)
+	===========				================
+	===========				================
+
+------------------------------------------------------------------		-------------------------------------------------------------------------
+constrcutor name should be always		function name can be anything
+__init__(self)
+------------------------------------------------------------------		---------------------------------------------------------------------------	
+constructor is called automatically at		function is called manually by programmer
+time of object creation
+------------------------------------------------------------------		--------------------------------------------------------------------------
+per object, constructor will be executed		per object ,method can be called any number 
+only once					of times
+------------------------------------------------------------------		----------------------------------------------------------------------------
+through constructor we can return None		through method we can return anything
+only
+------------------------------------------------------------------		-----------------------------------------------------------------------------
+
+
+===================================================================================
+===================================================================================
+
+				Types of Variables
+				================
+				================
+
+
+
+1--Static Variable(Class Level Variable)
+2--Instance Variable(Object Level Variable)
+3--Local Variable(Method Level Variable)
+
+
+1--Static Variable(Class Level Variable)
+==================================
+==================================
+The variable which are initilize inside a class and  outside a function are called Static Variable
+static variable will get memory for only one time
+this have common value for every objects
+static variable may be call also Class Name or Object reference variable
+
+
+Ex--
+====
+====
+
+class Company:
+	city="Banglore"
+	def __init__(self):
+		print("This Company Name is TCS")
+		print("This is Located in ",Company.city)		#By using Class Name
+		print("This is Also Located ",self.name)		#By reference variable
+
+
+Various Place declare Static Variable
+================================
+
+inside constructor by using class name
+=================================
+
+Ex-
+==	Class Test:
+	    	def __init__(self):
+			   Test.a=20		#defined here static variable 
+
+
+inside instance method by using class name
+=====================================
+
+Ex--
+===	Class Test:
+		def m(self):
+			Test.b=30
+
+
+inside classmethod by using either class name or cls variable 
+====================================================
+
+Ex--
+===	Class Test:
+		@classmethod
+		def m1(cls):
+			cls.c=40
+			Test.d=50
+
+inside static method by using class name
+====================================
+
+Ex--
+===	Class Test:
+		@staticmethod
+		def m2():
+			Test.e=60
+
+
+
+===================================================================================
+===================================================================================
+>>> #Working with Static variable...............................
+ 
+>>> class Test:
+	a="This is pure Static Method"	#By Static Method Definition
+	def __init__(self):
+		Test.b=1000     #This static method defined inside Constructor with Class Name
+
+	def m1(self):
+		Test.c=2000     #This static method defined inside Instance Method with Class Name
+
+	@classmethod
+	def m2(cls):
+		cls.d=3000     #this static method defined inside class method by cls Word
+		Test.e=4000    #this static method defined inside class method by Class Name
+
+	@staticmethod
+	def m3(self):
+		Test.f=5000    #this static method defined inside static method by Class Name
+
+
+
+===================================================================================
+===================================================================================
+
+How to access Static Variables
+==========================
+==========================
+
+inside constructor :: By using self or class name
+
+inside instance method :: By using self or class name
+
+inside class method  ::By using cls varible or Class Name
+
+inside Static method ::By using class name
+
+From outside of class ::By using Object Refernce Variable or classname
+
+
+------------------------------------------
+------------------------------------------
+>>> #Accessing the Static Variables
+
+>>> class Test:
+	a="This is pure Static Class"	 #By Static Method Definition
+	def __init__(self):
+		print(self.a)
+		print(Test.a)
+
+	def m1(self):
+		print(self.a)
+		print(Test.a)
+
+	@classmethod
+	def m2(cls):
+		print(cls.a)
+		print(Test.a)
+
+	@staticmethod
+	def m3():
+		print(Test.a)
+
+
+			
+===================================================================================
+===================================================================================
+
+Where we can modify the value of static variable
+==========================================
+
+
+
+Anywhere either within class or outside the class we can modify Static Variable by using Class Name
+
+Ex--
+====
+====
+
+>>> class Test:
+	a=777
+	@classmethod
+	def m1(cls):
+		cls.a=888
+	@staticmethod
+	def m2():
+		Test.a=999
+
+
+>>> Test.a		#777
+
+
+>>> Test.m1()
+>>> Test.a		#888
+
+
+>>> Test.m2()
+>>> Test.a		#999
+
+
+=================================================
+======================================================
+>>> class Test:
+	a=777
+	@classmethod
+	def m1(cls):
+		cls.a=888
+		print(cls.a)
+	@staticmethod
+	def m2():
+		Test.a=999
+		print(Test.a)
+
+		
+>>> Test.a		#777
+
+>>> Test.m1()	#888
+
+>>> Test.m2()	#999
+
+
+===================================================================================
+===================================================================================
+
+if we change the value of static variable by using either self or object reference variable ,then the 
+
+value of static variable would not be changed , just a new instance variable with that name will 
+
+be added to that particular object
+
+===============================Some Example Clear Concept============================
+===================================================================================
+Ex--1
+====
+====
+
+>>> class Test:
+	x=10
+	def __init__(self):
+		self.y=20
+
+		
+>>> t1=Test()
+>>> t2=Test()
+ 
+>>> print('T1',t1.x,t1.y)		# T1 10 20
+
+>>> print('T2',t2.x,t2.y)		#T2 10 20
+
+>>> t1.x=888
+>>> t1.y=999
+
+>>> print('T1',t1.x,t1.y)		#T1 888 999
+
+>>> print('T2',t2.x,t2.y)		#T2 10 20
+
+
+
+===================================================================================
+===================================================================================
+
+Ex--2
+====
+====
+
+>>> class Test:
+	a=10
+	def __init__(self):
+		self.b=20
+
+		
+>>> t1=Test()
+>>> t2=Test()
+
+>>> Test.a=888
+>>> t1.b=999
+
+>>> print('T1',t1.a,t1.b)		#T1 888 999
+
+>>> print('T2',t2.a,t2.b)		#T2 888 20
+
+
+===================================================================================
+===================================================================================
+Ex--3
+====
+====
+>>> class Test:
+	a=10
+	def __init__(self):
+		self.b=20
+	def m1(self):
+		self.a=888
+		self.b=999
+
+		
+>>> t1=Test()
+>>> t2=Test()
+ 
+>>> t1.m1( )
+
+>>> print('T1',t1.a,t1.b)		#T1 888 999
+
+>>> print('T2',t2.a,t2.b)		#T2 10 20
+
+===================================================================================
+===================================================================================
+ex--4
+====
+====
+
+>>> class Test:
+	a=10
+	def __init__(self):
+		self.b=20
+	@classmethod
+	def m1(cls):
+		cls.a=888
+		cls.b=999
+
+		
+>>> t1=Test()
+>>> t2=Test()
+
+>>> t1.m1()
+
+>>> print('T1',t1.a,t1.b)		# T1 888 20
+
+>>> print('T2',t2.a,t2.b)		# T2 888 20
+
+>>> print(Test.a,Test.b)		# 888 999
+
+
+===================================================================================
+===================================================================================
+ex-5
+====
+====
+
+>>> class Test:
+	a=10
+	def __init__(self):
+		self.b=20
+	@staticmethod
+	def m1( ):
+		Test.a=888
+		Test.b=999
+
+		
+>>> t1=Test( )
+>>> t2=Test( )
+
+>>> t1.m1( )
+
+>>> print('T1',t1.a,t1.b)		# T1 888 20
+
+>>> print('T2',t2.a,t2.b)		# T2 888 20
+
+>>> print(Test.a,Test.b)		# 888 999
+
+===================================================================================
+===================================================================================
+
+How to delete Static Variable of a Class
+==================================
+=======================================Syntax======================================
+
+del  ClassName.VariableName
+
+
+Ex--
+====
+====
+
+>>> class Test:
+	a=10
+	@classmethod
+	def m1(cls):
+		del cls.a
+
+		
+>>> Test.m1( )
+>>> print(Test.__dict__)
+{'__module__': '__main__', 'm1': <classmethod object at 0x000001F986C9F7F0>, '__dict__': <attribute '__dict__' of 'Test' objects>, '__weakref__': <attribute '__weakref__' of 'Test' objects>, '__doc__': None}
+
+===================================================================================
+===================================================================================
+Ex-
+===
+===
+
+>>> class Test:
+	a=10
+	def __init__(self):
+		Test.b=20
+		del Test.a
+	def m1(self):
+		Test.c=30
+		del Test.b
+	@classmethod
+	def m2(cls):
+		cls.d=40
+		del Test.c
+	@staticmethod
+	def m3():
+		Test.e=50
+		del Test.d
+
+		
+>>> print(Test.__dict__)
+{'__module__': '__main__', 'a': 10, '__init__': <function Test.__init__ at 0x000001F986CDF268>, 'm1': <function Test.m1 at 0x000001F986CDF2F0>, 'm2': <classmethod object at 0x000001F986CBACC0>, 'm3': <staticmethod object at 0x000001F986CBAD68>, '__dict__': <attribute '__dict__' of 'Test' objects>, '__weakref__': <attribute '__weakref__' of 'Test' objects>, '__doc__': None}
+
+ 
+>>> t=Test()
+>>> print(Test.__dict__)
+{'__module__': '__main__', '__init__': <function Test.__init__ at 0x000001F986CDF268>, 'm1': <function Test.m1 at 0x000001F986CDF2F0>, 'm2': <classmethod object at 0x000001F986CBACC0>, 'm3': <staticmethod object at 0x000001F986CBAD68>, '__dict__': <attribute '__dict__' of 'Test' objects>, '__weakref__': <attribute '__weakref__' of 'Test' objects>, '__doc__': None, 'b': 20}
+
+ 
+>>> t.m1()
+>>> print(Test.__dict__)
+{'__module__': '__main__', '__init__': <function Test.__init__ at 0x000001F986CDF268>, 'm1': <function Test.m1 at 0x000001F986CDF2F0>, 'm2': <classmethod object at 0x000001F986CBACC0>, 'm3': <staticmethod object at 0x000001F986CBAD68>, '__dict__': <attribute '__dict__' of 'Test' objects>, '__weakref__': <attribute '__weakref__' of 'Test' objects>, '__doc__': None, 'c': 30}
+
+ 
+>>> t.m2()
+>>> print(Test.__dict__)
+{'__module__': '__main__', '__init__': <function Test.__init__ at 0x000001F986CDF268>, 'm1': <function Test.m1 at 0x000001F986CDF2F0>, 'm2': <classmethod object at 0x000001F986CBACC0>, 'm3': <staticmethod object at 0x000001F986CBAD68>, '__dict__': <attribute '__dict__' of 'Test' objects>, '__weakref__': <attribute '__weakref__' of 'Test' objects>, '__doc__': None, 'd': 40}
+
+
+>>> t.m3()
+>>> print(Test.__dict__)
+{'__module__': '__main__', '__init__': <function Test.__init__ at 0x000001F986CDF268>, 'm1': <function Test.m1 at 0x000001F986CDF2F0>, 'm2': <classmethod object at 0x000001F986CBACC0>, 'm3': <staticmethod object at 0x000001F986CBAD68>, '__dict__': <attribute '__dict__' of 'Test' objects>, '__weakref__': <attribute '__weakref__' of 'Test' objects>, '__doc__': None, 'e': 50}
+
+===================================================================================
+===================================================================================
+
+By using the object reference variable/self we can read static variable not delete of modify
+						             ==================
+
+>>> class Test:
+	a=10
+
+>>> t=Test()
+>>> del t.a
+Traceback (most recent call last):
+  File "<pyshell#264>", line 1, in <module>
+    del t.a
+AttributeError: a
+
+===================================================================================
+===================================================================================
+===================================================================================
+
+we can modify or delete static variable only by using Classname or cls variable
+===================================================================
+
+import sys
+class Customer:
+    """Customer Class With Bank Operations........"""
+    bankname="Mukesh_Bank"
+    def __init__(self,name,balance=0):
+        self.name=name
+        self.balance=balance
+    def deposit(self,amt):
+        self.balance=self.balance+amt
+        print("Balance After Deposit ::",self.balance)
+    def withdraw(self,amt):
+        if amt>self.balance:
+            print("Insufficient Funds..Cannot Perform Opearation")
+            sys.exit()
+        self.balance=self.balance-amt
+        print("Balance After Withdraw ::",self.balance)
+print("Welcome to ",Customer.bankname)
+name=input("Enter Your Name:: ")
+c=Customer(name)
+while True:
+    print("d-Deposit\nw-Withdraw\ne-Exit")
+    option=input("Please Choose Your Option:: ")
+    if option=='d' or option=='D':
+        amt=float(input("Enter Amount"))
+        c.deposit(amt)
+    elif option=='w' or option=='W':
+        amt=float(input("Enter Amount"))
+        c.withdraw(amt)
+    elif option=='e' or option=='E':
+        print("Thanks for Banking ")
+        sys.exit()
+    else:
+        print("Invalid!!! Please Choose Valid Option")
+
+===================================================================================
+===================================================================================
+
+2--Instance Variable(Object Level Variable)
+=================
+=================
+Instance variable will hold unique value for every object means value of variable is varied from 
+object to object , then such type of variable are called instance variables 
+
+instance variable are declared by using self word
+
+to call instance variable we use object or object reference variable
+
+instance variable will get memory for every object creation
+
+===================================================================================
+===================================================================================
+
+Where can we declare
+===================
+===================
+
+1-inside Constructor by using self variable
+
+2-inside instance method by using self variable
+
+3-outside of the class by using object reference variable
+
+
+
+1-inside Constructor by using self variable
+=====================================
+=====================================
+we can declare instance variables inside Constructor by using self keyword .
+Once we creates object ,automatically,these variables will be added to the object
+
+>>> class Employee:
+	def __init__(self):
+		self.eno=100
+		self.ename="Mukesh"
+		self.esal=10000
+
+		
+>>> e=Employee()
+>>> print(e.__dict__)
+{'eno': 100, 'ename': 'Mukesh', 'esal': 10000}
+
+
+===================================================================================
+===================================================================================
+ 2-inside instance method by using self variable
+========================================
+========================================
+
+we can also decalre instance variables inside method by using self variable .
+if any instance variable declared inside instance method , that instance variable will be added 
+once we call that method
+
+>>> class Test:
+	def __init__(self):
+		self.a=10
+		self.b=20
+	def m1(self):
+		self.c=30
+
+		
+>>> t=Test()
+>>> t.m1()
+>>> print(t.__dict__)
+{'a': 10, 'b': 20, 'c': 30}
+
+==================================================================================
+==================================================================================
+
+
+3-outside of the class by using object reference variable
+===============================================
+===============================================
+
+we can also add instance variable outside of a class to a particular object
+
+>>> class Test:
+	def __init__(self):
+		self.a=10
+		self.b=20
+	def m1(self):
+		self.c=30
+
+		
+>>> t=Test()
+>>> t.m1()
+>>> t.d=40
+>>> print(t.__dict__)
+{'a': 10, 'b': 20, 'c': 30, 'd': 40}
+
+
+===================================================================================
+===================================================================================
+
+How to access instance variables
+============================
+============================
+we can access instance variables within the class by using self variable and outside of the class by
+using object reference variable
+
+>>> class Test:
+	def __init__(self):
+		self.a=10
+		self.b=20
+	def display(self):
+		print(self.a)
+		print(self.b)
+
+		
+>>> t=Test()
+>>> t.display()	# 10  20
+
+>>> print(t.a,t.b)	# 10 20
+
+===================================================================================
+===================================================================================
+
+How to delete instance variable from the object
+=========================================
+
+within a class we can delete instance variable like
+==========================================
+==========================================
+
+del self.VariableName
+
+From outside the class we can delete instance variables like
+===================================================
+===================================================
+
+del objectreference.VariableName 
+
+
+Ex--
+====
+====
+
+>>> class Test:
+	def __init__(self):
+		self.a=10
+		self.b=20
+		self.c=30
+		self.d=40
+	def m1(self):
+		del self.d
+
+		
+>>> t=Test()
+
+>>> print(t.__dict__)		#  {'a': 10, 'b': 20, 'c': 30, 'd': 40}
+
+>>> t.m1()
+
+>>> print(t.__dict__)		#  {'a': 10, 'b': 20, 'c': 30}
+
+>>> del t.c
+
+>>> print(t.__dict__)		#   {'a': 10, 'b': 20}
+
+
+=====================================================================================
+Note- The instance variables which are deleted from one object , will not be deleted from other object
+=====================================================================================
+Ex--
+====
+====
+
+>>> class Test:
+	def __init__(self):
+		self.a=10
+		self.b=20
+		self.c=30
+		self.d=40
+
+		
+>>> t1=Test()
+
+>>> t2=Test()
+
+>>> del t1.a
+
+>>> print(t1.__dict__)	# {'b': 20, 'c': 30, 'd': 40}
+
+>>> print(t2.__dict__)	# {'a': 10, 'b': 20, 'c': 30, 'd': 40} 
+
+===================================================================================
+Note--if we the values of instance variables of one object then those changes would not be reflected 
+to the remaining objects , beacause for every object we are separate copy of instance variables are 
+availble 
+===================================================================================
+Ex-
+===
+===
+>>> class Test:
+	def __init__(self):
+		self.a=10
+		self.b=20
+
+		
+>>> t1=Test()
+>>> t2=Test()
+ 
+>>> t1.a=888
+>>> t1.b=999
+ 
+>>> print("T1",t1.a,t1.b)	# T1 888 999
+
+>>> print("T2",t2.a,t2.b)	# T2 10 20
+
+
+===================================================================================
+===================================================================================
+===================================================================================
+
+3-Local Variables
+===============
+===============
+we can declare variables inside a method directly , such type of variables are called Local Variable
+or temproray Variables
+
+Local variable will be created at the time of method execution and destroyed once method completes
+
+Local variables of a method cannot be accessed from outside of method
+
+>>> class Test:
+	def m1(self):
+		a=1000
+		print(a)
+	def m2(self):
+		b=2000
+		print(b)
+
+		
+>>> t=Test()
+
+>>> t.m1()		# 1000
+
+>>> t.m2()		# 2000
+
+
+
+========================
+========================
+
+>>> class Test:
+	def m1(self):
+		a=1000
+		print(a)
+	def m2(self):
+		b=2000
+		print(a)
+		print(b)
+
+		
+>>> t=Test( )
+>>> t.m1( )		# 1000
+>>> t.m2( )
+Traceback (most recent call last):
+  File "<pyshell#15>", line 1, in <module>
+    t.m2( )
+  File "<pyshell#12>", line 7, in m2
+    print(a)
+NameError: name 'a' is not defined
+
+
+===================================================================================
+===================================================================================
+==================================Types of Methods==================================
+1--Instance Methods 
+2--Class Method
+3--Static Method
+
+==================
+==================
+
+===================================================================================
+===================================================================================
+
+1--Instance Methods 
+==================
+==================
+
+inside the method implementation if we are using instance variables then such type of methods
+are called instance methods
+
+inside instance methods decalration , we have to pass 'self' word 
+
+def m1(self)
+
+By the using self word we can access instance variables
+
+Note-- Within a class we can call instance method by using self word 
+            From outside of class  w can call by using object refernce variable
+
+
+Ex-
+====
+====
+
+class Student:
+    def __init__(self,name,marks):
+        self.name=name
+        self.marks=marks
+    def display(self):
+        print("H!!!!",self.name)
+        print("Your Marks are:: ",self.marks)
+    def grade(self):
+        if self.marks>=60:
+            print("You got First Grade")
+        elif self.marks>=50:
+            print("You got Second Grade")
+        elif self.marks>=35:
+            print("You got Third Grade")
+        else:
+            print("Ohh!!!!!! You Failed")
+
+n=int(input("Enter the Number of Student:: "))
+for i in range(n):
+    name=input("Enter Student Name:: ")
+    marks=int(input("Enter the Marks:: "))
+s=Student(name,marks)
+s.display( )
+s.grade( )
+
+===================================================================================
+===================================================================================
+
+Setter And Getter Method
+============
+===============
+====================
+we can set and get the values of instance variable by using setter and getter methods
+=================
+=======================
+=============================
+
+Setter Method
+============
+==============
+=================
+
+setter methods can be used to set values to instance variables , setter methods also known as 
+Mutator methods
+
+=========================
+=========================================Syntax====================================
+===================================================================================
+
+def   setVariable(self,variable):
+	self.variable=variable
+
+Ex--
+=====
+=======
+def  setName(self,name):
+	self.name=name
+
+
+===================================================================================
+===================================================================================
+
+2--Getter Methods
+================
+===================
+
+gettter method use to get the values of instance variables , getter method also knwon as 
+accessor methods
+
+===================================================================================
+=========================================Syntax====================================
+
+def  getVariable(self):
+	return self.variable
+
+Ex--
+====
+=====
+
+def  getName(self):
+	return self.name
+ 
+===================================================================================
+===================================================================================
+=================================Program of Setter and Getter=========================
+===================================================================================
+
+class Student:
+    def setName(self,name):
+        self.name=name
+        
+    def getName(self):
+        return self.name
+    def setMarks(self,marks):
+        self.marks=marks
+    def getMarks(self):
+        return self.marks
+    
+n=int(input("Enter the Number of Student:: "))
+for i in range(n):
+    s=Student()
+    name=input("Enter Student Name:: ")
+    s.setName(name)
+    marks=int(input("Enter the Marks:: "))
+    s.setMarks(marks)
+print("Hiii ",s.getName())
+print("Your Marks are: ",s.getMarks())
+
+====================================================================================
+====================================================================================
+
+2-Class Methods
+==============
+=================
+
+inside method implementation if we are using only class variable(static variables), then 
+such type of methods we should declare as class method
+
+we can decalre class method by using @classmethod decorator
+for class method we should provide 'cls'  variable at the time of declaration
+
+we can call classmethod by using classname or object reference variable
+
+Ex---
+=====
+=======
+
+>>> class Animal:
+	legs=4
+	@classmethod
+	def walk(cls,name):
+		print("{} walks {} legs..".format(name,cls.legs))
+
+		
+>>> Animal.walk('Dogs')	# Dogs walks 4 legs..
+
+>>> Animal.walk('Cows')	# Cows walks 4 legs..
+
+===================================================================================
+===================================================================================
+
+count number of objects created for a class
+=====================================
+=======================================
+
+>>> class Test:
+	count=0
+	def __init__(self):
+		Test.count=Test.count+1
+	@classmethod
+	def noOfObjects(cls):
+		print("Number of  Objects created ",cls.count)
+
+		
+>>> t=Test()
+>>> t2=Test()
+>>> 
+>>> Test.noOfObjects()
+Number of  Objects created  2
+
+
+===================================================================================
+===================================================================================
+
+3.Static Methods
+==============
+================
+
+Static methods works like regular functions but belongs to class
+
+we can declare static method by @staticmethod decorator
+
+In static method we don't need provide self or cls argument at the time of decalration
+
+we can access static method by using classname or object refernce variable
+
+
+Ex--
+=====
+========
+
+>>> class Math:
+
+	@staticmethod
+	def add(x,y):
+		print("Sum:: ",x+y)
+	@staticmethod
+	def product(x,y):
+		print("The Product:: ",x*y)
+	@staticmethod
+	def average(x,y):
+		print("Average:: ",(x+y)/2)
+
+		
+>>> Math.add(10,20)		# Sum::  30
+
+>>> Math.product(50,60)	# The Product::  3000
+
+>>> Math.average(30,20)	#Average::  25.0
+
+
+===================================================================================
+===================================================================================
+
+Inner Classes
+===========
+=============
+================
+Sometimes we can declare a class inside another class ,such type of classes are called Inner class
+
+without existing one type of object if there is no chance another type of object , then we should 
+go for inner class
+
+
+Ex---
+======
+========
+without existing car class there is no chance of existing engine class , hence engine class should 
+be part of car class
+
+class Car:
+	---------
+	---------
+	class Engine:
+		----------
+		----------
+
+Ex-
+=====
+========
+without existing Human ther is no chance of existing Head , hence Head should be part of Human
+
+Class  Human:
+	--------
+	---------
+	class Head:
+		--------
+		--------
+
+
+===================================================================================
+===================================================================================
+
+Demo Program--1
+================
+===================
+
+
+>>> class Outer:
+	def __init__(self):
+		print("Outer Class")
+	class Inner:
+		def __init__(self):
+			print("Inner Class")
+		def m1(self):
+			print("Inner Class Method")
+
+				
+>>> o=Outer()
+Outer Class
+>>> i=o.Inner()
+Inner Class
+>>> i.m1()
+Inner class Method
+
+===============================
+other methods also to call inner class
+======
+>>> i=Outer().Inner()
+Outer Class
+Inner Class
+
+>>> i=Outer().Inner().m1()
+Outer Class
+Inner Class
+Inner Class Method
+
+
+>>> Outer().Inner().m1()
+Outer Class
+Inner Class
+Inner Class Method
+
+           
+===================================================================================
+===================================================================================
+
+Garbage Collection
+================
+==================
+=====================
+
+garbage collection is a assitant who is always running in the backgrond to destroy useless objects
+
+By default garbage collector is enabled , but we can disable also according to our requirement 
+
+Hence garbage collector main objective is to destroy useless object so that memory may free
+
+if an object does not have any reference variable then that object is elligible for garbage collection
+
+
+garbage collector is module as gc
+
+some function to enable , disable the garbage collector
+
+Ex--
+
+import gc
+
+gc.isenabled( )		#Return True if GC enabled
+
+gc.disabled()		# To disable GC
+
+gc.enable( )		# To enable GC
+
+
+
+===================================================================================
+===================================================================================
+
+Destructors
+==========
+=============
+================
+
+destructor is a special method and the name should be __del__
+
+just before destroying an object garbaeg collector always calls destructor to perform cleanup activity
+
+once desctructor execution completed then garbage collector automatically destroys that object
+
+note- job of destructor is not destroy object , its just perform clean up activities
+
+ 
+Ex--
+======
+===========
+
+>>> import time
+>>> class Test:
+	def __init__(self):
+		print("Object Initilizatios........")
+	def __del__(self):
+		print("performing the clean up activites")
+
+		
+>>> t=Test()	#Object Initilizatios........
+		performing the clean up activites
+
+>>> t=None	#performing the clean up activites
+
+>>> time.sleep(5)
+
+>>> print("End of Applications")	#End of Applications
+
+
+===================================================================================
+
+Note-
+if object does not contain any reference variable then only it is eligble for gc
+i.e if the refernce count is zero then only object eligible for GC
+
+
+Ex-
+
+>>> import time
+>>> class Test:
+	def __init__(self):
+		print("Constructor Execution........")
+	def __del__(self):
+		print("Destructor Execution..........")
+
+		
+>>> t1=Test()	# Constructor Execution........
+
+>>> t2=t1
+
+>>> t3=t2
+
+>>> del t1
+
+>>> time.sleep(5)
+
+>>> print("Object not yet destroyed after deleting t1")
+#Object not yet destroyed after deleting t1
+
+>>> del t2
+
+>>> time.sleep(5)
+
+>>> print("Object not yet destroyed even after deleting t2")
+#Object not yet destroyed even after deleting t2
+
+>>> print("I am trying to delete last reference variable............")
+#I am trying to delete last reference variable............
+
+>>> del t3  		#Destructor Execution..........
+
+
+================================================================
+===========================================================================
+>>> import time
+>>> class Test:
+	def __init__(self):
+		print("Constructor Execution........")
+	def __del__(self):
+		print("Destructor Execution..........")
+
+		
+>>> list=[Test(),Test(),Test()]
+Constructor Execution........
+Constructor Execution........
+Constructor Execution........
+>>> del list
+Destructor Execution..........
+Destructor Execution..........
+Destructor Execution..........
+
+
+===================================================================================
+===================================================================================
+How to find number of reference of an object
+
+
+>>> import sys
+>>> class Test:
+	pass
+
+>>> t1=Test()
+>>> t2=t1
+>>> t3=t1
+>>> t4=t1
+>>> print(sys.getrefcount(t1))
+5
+
+
+Note--
+
+For every object , python internally maintains one default reference variable self
+
+
+===================================================================================
+===================================================================================
+
+			Pickling and Unpickling of Objects
+		==================================================
+	=====================================================================
+
+Sometimes we have to write total state of objects to the file 
+and 
+Sometimes we have to read total objects from a file
+
+----------------------------------------------------------------------------------------------------------
+
+The process of writing state of object to the file is called Pickling 
+and
+The process of reading state of an object from the file is called Unpickling
+
+We can implement pickling and unpickling by using pickle module of python
+
+pickle module contains dump() function to perform pickling 
+		     -------------		
+
+pickle.dump(object,filename)
+
+
+
+pickle module contains load() function to perform unpickling  
+		    ------------
+obj=pickle.load(filename)
+
+
+====================================================================================
+====================================================================================
+
+		Writing and Reading State of Object by using Pickle Module
+		===================================================
+=====================================================================================
+
+import pickle
+class Employee:
+    def __init__(self,eno,ename,esal,eaddr):
+        self.eno=eno
+        self.ename=ename
+        self.esal=esal
+        self.eaddr=eaddr
+    def display(self):
+        print(self.eno,"\t",self.ename,"\t",self.esal,"\t",self.eaddr)
+with open("file1.txt","wb") as f:
+    e=Employee(100,"Mukesh",50000,"Banglore")
+    pickle.dump(e,f)
+    print("Pickling og Employe Object Completed.....")
+
+with open("file1.txt","rb") as f:
+    obj=pickle.load(f)
+    obj.display()
+
+		Output
+
+
+Pickling og Employe Object Completed.....
+100 	 Mukesh 	 50000 	 Banglore
+
